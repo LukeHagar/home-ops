@@ -1,0 +1,12 @@
+---
+creation_rules:
+  - path_regex: talos/.*\.sops\.ya?ml
+    mac_only_encrypted: true
+    age: "age1uau898xek2nz2pru9guhcln7jn2p5cz2exl20evhhcr9zyl59ypq6h8kfy"
+  - path_regex: (bootstrap|kubernetes)/.*\.sops\.ya?ml
+    encrypted_regex: "^(data|stringData)$"
+    mac_only_encrypted: true
+    age: "age1uau898xek2nz2pru9guhcln7jn2p5cz2exl20evhhcr9zyl59ypq6h8kfy"
+stores:
+  yaml:
+    indent: 2
