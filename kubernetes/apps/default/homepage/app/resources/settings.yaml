@@ -1,0 +1,13 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+title: 🏠
+headerStyle: clean
+layout:
+  Infra:
+    style: row
+    columns: 3
+  Tools:
+    style: row
+    columns: 3

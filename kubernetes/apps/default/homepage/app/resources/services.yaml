@@ -1,0 +1,62 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+- Infra:
+      - homeassistant:
+            icon: sh-home-assistant-light.webp
+            href: https://hass.nouvelle.house/
+      - esphomedb:
+            icon: sh-esphome-light.webp
+            href: https://esphdb.kantai.xyz/
+            namespace: default
+            app: esphome-device-builder
+            widget:
+                type: esphome
+                url: https://esphdb.kantai.xyz/
+      - gatus:
+            icon: sh-gatus-light.webp
+            href: https://status.kantai.xyz/
+            namespace: observability
+            app: gatus
+            widget:
+                type: gatus
+                url: http://gatus.observability.svc:80
+      - grafana:
+            icon: sh-grafana-light.webp
+            href: https://grafana.kantai.xyz/
+            namespace: observability
+            app: grafana
+      - victorialogs:
+            icon: sh-victoriametrics-light.webp
+            href: https://val.kantai.xyz/
+            namespace: observability
+            app: victoria-logs-single
+      - victoriametrics:
+            icon: sh-victoriametrics-light.webp
+            href: https://vam.kantai.xyz/
+            namespace: observability
+            app: vmsingle
+      - tailscale:
+            icon: sh-tailscale-light.webp
+            href: https://login.tailscale.com/admin/machines
+            namespace: tailscale
+            podSelector: ""
+- Tools:
+      - homebox:
+            icon: sh-homebox.webp
+            href: https://homebox.kantai.xyz/
+            namespace: default
+            app: homebox
+      - memos:
+            icon: sh-memos.webp
+            href: https://memos.kantai.xyz/
+            namespace: default
+            app: memos
+      - spoolman:
+            icon: sh-spoolman.webp
+            href: https://spoolman.kantai.xyz/
+            namespace: default
+            app: spoolman
+            widget:
+                type: spoolman
+                url: http://spoolman.default.svc:8000

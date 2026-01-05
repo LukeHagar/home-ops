@@ -6,10 +6,10 @@
     "files.trimTrailingWhitespace": true,
     "sops.defaults.ageKeyFile": "age.key",
     "vs-kubernetes": {
-        "vs-kubernetes.kubeconfig": "./kubeconfig",
+        "vs-kubernetes.kubeconfig": "/home/luke/.kube/config",
         "vs-kubernetes.knownKubeconfigs": [
-          "./kubeconfig"
-      ]
+            "/home/luke/.kube/config"
+        ]
     },
     "yaml.schemaStore.enable": true,
     "yaml.schemas": {

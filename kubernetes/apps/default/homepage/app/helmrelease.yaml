@@ -1,0 +1,91 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/app-template-4.5.0/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: homepage
+  namespace: default
+  labels:
+    app.kubernetes.io/name: homepage
+spec:
+  interval: 1h
+  chartRef:
+    kind: OCIRepository
+    name: homepage
+  driftDetection:
+    mode: enabled
+  install:
+    remediation:
+      retries: -1
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  values:
+    controllers:
+      homepage:
+        annotations:
+          reloader.stakater.com/auto: "true"
+        strategy: RollingUpdate
+        containers:
+          app:
+            image:
+              repository: ghcr.io/gethomepage/homepage
+              tag: v1.8.0
+            env:
+              HOMEPAGE_ALLOWED_HOSTS: "*"
+              NODE_OPTIONS: "--max-http-header-size=65536"
+              PUID: 1000
+              PGID: 1000
+              TZ: America/Chicago
+            envFrom:
+              - secretRef:
+                  name: homepage-secret
+            probes:
+              liveness:
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /api/healthcheck
+                    port: &port 3000
+        serviceAccount:
+          identifier: homepage
+    defaultPodOptions:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
+    persistence:
+      homepage-config:
+        type: configMap
+        name: homepage-config
+        globalMounts:
+          - path: /app/config
+      logs:
+        type: emptyDir
+        sizeLimit: 100Mi
+        globalMounts:
+          - path: /app/config/logs
+    route:
+      homepage:
+        hostnames:
+          - "homepage.plygrnd.org"
+        parentRefs:
+          - name: envoy-external
+            namespace: network
+        rules:
+          - backendRefs:
+              - port: *port
+                name: homepage
+    service:
+      homepage:
+        controller: homepage
+        type: ClusterIP
+        ports:
+          http:
+            port: *port
+    serviceAccount:
+      homepage: {}

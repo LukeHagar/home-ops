@@ -1,0 +1,18 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+
+- kubernetes:
+    cluster:
+      show: true
+      cpu: true
+      memory: true
+      showLabel: true
+      label: "Olympus"
+    nodes:
+      # Shows node-specific statistics
+      show: false
+
+- search:
+    provider: google
+    target: _blank
