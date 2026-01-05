@@ -28,7 +28,15 @@ spec:
     sources: ["crd", "gateway-httproute"]
     txtPrefix: k8s.
     txtOwnerId: default
-    domainFilters: ["plygrnd.org", "gitwatch.dev"]
+    domainFilters:
+      - "plygrnd.org"
+      - "gitwatch.dev"
+      - "lukehagar.com"
+      - "openapi.gg"
+      - "openapi.info"
+      - "parke.dev"
+      - "pypistats.dev"
+      - "batonapp.dev"
     serviceMonitor:
       enabled: true
     podAnnotations:
