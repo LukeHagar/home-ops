@@ -60,7 +60,7 @@ spec:
           - port: http
     route:
       app:
-        hostnames: ["echo.plygrnd.org", "test.gitwatch.dev"]
+        hostnames: ["echo.plygrnd.org"]
         parentRefs:
           - name: envoy-external
             namespace: network
