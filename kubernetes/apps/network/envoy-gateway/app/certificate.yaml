@@ -2,11 +2,27 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: "${SECRET_DOMAIN/./-}-production"
+  name: "plygrnd-org-certificate"
 spec:
-  secretName: "${SECRET_DOMAIN/./-}-production-tls"
+  secretName: "plygrnd-org-tls"
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "${SECRET_DOMAIN}"
-  dnsNames: ["${SECRET_DOMAIN}", "*.${SECRET_DOMAIN}"]
+  commonName: plygrnd.org
+  dnsNames:
+    - "plygrnd.org"
+    - "*.plygrnd.org"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "gitwatch-dev-certificate"
+spec:
+  secretName: "gitwatch-dev-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: gitwatch.dev
+  dnsNames:
+    - "gitwatch.dev"
+    - "*.gitwatch.dev"
