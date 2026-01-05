@@ -34,9 +34,6 @@ spec:
               tag: v1.8.0
             env:
               HOMEPAGE_ALLOWED_HOSTS: "*"
-              NODE_OPTIONS: "--max-http-header-size=65536"
-              PUID: 1000
-              PGID: 1000
               TZ: America/Chicago
             probes:
               liveness:
