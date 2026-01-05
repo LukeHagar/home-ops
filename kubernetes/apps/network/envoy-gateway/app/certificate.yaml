@@ -26,3 +26,87 @@ spec:
   dnsNames:
     - "gitwatch.dev"
     - "*.gitwatch.dev"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "lukehagar-com-certificate"
+spec:
+  secretName: "lukehagar-com-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: lukehagar.com
+  dnsNames:
+    - "lukehagar.com"
+    - "*.lukehagar.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "openapi-gg-certificate"
+spec:
+  secretName: "openapi-gg-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: openapi.gg
+  dnsNames:
+    - "openapi.gg"
+    - "*.openapi.gg"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "openapi-info-certificate"
+spec:
+  secretName: "openapi-info-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: openapi.info
+  dnsNames:
+    - "openapi.info"
+    - "*.openapi.info"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "parke-dev-certificate"
+spec:
+  secretName: "parke-dev-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: parke.dev
+  dnsNames:
+    - "parke.dev"
+    - "*.parke.dev"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "pypistats-dev-certificate"
+spec:
+  secretName: "pypistats-dev-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: pypistats.dev
+  dnsNames:
+    - "pypistats.dev"
+    - "*.pypistats.dev"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "batonapp-dev-certificate"
+spec:
+  secretName: "batonapp-dev-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: batonapp.dev
+  dnsNames:
+    - "batonapp.dev"
+    - "*.batonapp.dev"
