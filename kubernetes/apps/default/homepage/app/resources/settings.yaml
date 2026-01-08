@@ -2,12 +2,36 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/latest/configs/settings
 
-title: 🏠
+title: plygrnd
+favicon: https://kubernetes.io/images/favicon.png
 headerStyle: clean
+
 layout:
-  Infra:
+  Applications:
+    style: row
+    columns: 2
+    icon: mdi-application
+  Networking:
     style: row
     columns: 3
-  Tools:
+    icon: mdi-network
+  Infrastructure:
     style: row
     columns: 3
+    icon: mdi-server
+  GitOps:
+    style: row
+    columns: 2
+    icon: mdi-git
+  Security:
+    style: row
+    columns: 1
+    icon: mdi-shield-lock
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: false
+  showSearchSuggestions: true
+  hideVisitURL: false
+
+statusStyle: dot

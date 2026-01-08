@@ -8,11 +8,19 @@
       cpu: true
       memory: true
       showLabel: true
-      label: "Olympus"
+      label: "plygrnd"
     nodes:
-      # Shows node-specific statistics
-      show: false
+      show: true
+      cpu: true
+      memory: true
+      showLabel: true
 
 - search:
-    provider: google
+    provider: duckduckgo
     target: _blank
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short

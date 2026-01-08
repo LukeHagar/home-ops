@@ -2,20 +2,84 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/latest/configs/bookmarks
 
-- Developer:
-    - Github:
+- Kubernetes:
+    - Kubernetes Docs:
+        - abbr: K8s
+          icon: kubernetes.png
+          href: https://kubernetes.io/docs/
+    - Flux CD:
+        - abbr: Flux
+          icon: flux-cd.png
+          href: https://fluxcd.io/flux/
+    - Helm Charts:
+        - abbr: Helm
+          icon: helm.png
+          href: https://artifacthub.io/
+    - Talos Linux:
+        - abbr: Talos
+          icon: talos.png
+          href: https://www.talos.dev/
+
+- Infrastructure:
+    - Cilium:
+        - abbr: CNI
+          icon: cilium.png
+          href: https://docs.cilium.io/
+    - Envoy Gateway:
+        - abbr: Envoy
+          icon: envoyproxy.png
+          href: https://gateway.envoyproxy.io/
+    - Cert Manager:
+        - abbr: Certs
+          icon: cert-manager.png
+          href: https://cert-manager.io/docs/
+    - Cloudflare:
+        - abbr: CF
+          icon: cloudflare.png
+          href: https://dash.cloudflare.com/
+
+- Development:
+    - GitHub:
         - abbr: GH
           icon: github.png
-          href: https://github.com/LukeHagar
+          href: https://github.com/
+    - VS Code:
+        - abbr: VSC
+          icon: vscode.png
+          href: https://vscode.dev/
+    - Docker Hub:
+        - abbr: Docker
+          icon: docker.png
+          href: https://hub.docker.com/
+    - GHCR:
+        - abbr: GHCR
+          icon: github.png
+          href: https://ghcr.io/
 
-- Social:
-    - Reddit:
-        - abbr: RE
+- Monitoring:
+    - Grafana Dashboards:
+        - abbr: Dash
+          icon: grafana.png
+          href: https://grafana.com/grafana/dashboards/
+    - Prometheus:
+        - abbr: Prom
+          icon: prometheus.png
+          href: https://prometheus.io/docs/
+    - Homepage Docs:
+        - abbr: Home
+          icon: homepage.png
+          href: https://gethomepage.dev/
+
+- Community:
+    - Reddit r/homelab:
+        - abbr: HL
           icon: reddit.png
-          href: https://reddit.com/
-
-- Entertainment:
-    - YouTube:
-        - abbr: YT
-          icon: youtube.png
-          href: https://youtube.com/
+          href: https://reddit.com/r/homelab
+    - Reddit r/kubernetes:
+        - abbr: K8s
+          icon: reddit.png
+          href: https://reddit.com/r/kubernetes
+    - Reddit r/selfhosted:
+        - abbr: SH
+          icon: reddit.png
+          href: https://reddit.com/r/selfhosted

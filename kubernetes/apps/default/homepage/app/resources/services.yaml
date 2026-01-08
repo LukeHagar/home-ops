@@ -1,43 +1,85 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/latest/configs/services
-- Infra:
-      - homeassistant:
-            icon: sh-home-assistant-light.webp
-            href: https://hass.nouvelle.house/
-      - esphomedb:
-            icon: sh-esphome-light.webp
-            href: https://esphdb.kantai.xyz/
-            namespace: default
-            app: esphome-device-builder
-            widget:
-                type: esphome
-                url: https://esphdb.kantai.xyz/
-      - gatus:
-            icon: sh-gatus-light.webp
-            href: https://status.kantai.xyz/
-            namespace: observability
-            app: gatus
-            widget:
-                type: gatus
-                url: http://gatus.observability.svc:80
-      - grafana:
-            icon: sh-grafana-light.webp
-            href: https://grafana.kantai.xyz/
-            namespace: observability
-            app: grafana
-      - victorialogs:
-            icon: sh-victoriametrics-light.webp
-            href: https://val.kantai.xyz/
-            namespace: observability
-            app: victoria-logs-single
-      - victoriametrics:
-            icon: sh-victoriametrics-light.webp
-            href: https://vam.kantai.xyz/
-            namespace: observability
-            app: vmsingle
-      - tailscale:
-            icon: sh-tailscale-light.webp
-            href: https://login.tailscale.com/admin/machines
-            namespace: tailscale
-            podSelector: ""
+
+- Applications:
+    - Echo Server:
+        icon: mdi-api
+        href: https://echo.plygrnd.org/
+        description: HTTP Echo Test Server
+        namespace: default
+        app: echo
+    - Homepage:
+        icon: homepage.png
+        href: https://homepage.plygrnd.org/
+        description: Dashboard
+        namespace: default
+        app: homepage
+
+- Networking:
+    - Envoy Gateway:
+        icon: envoyproxy.png
+        description: Gateway API Controller
+        namespace: network
+        app: envoy-gateway
+    - K8s Gateway:
+        icon: mdi-dns
+        description: Internal DNS Gateway
+        namespace: network
+        app: k8s-gateway
+    - Cloudflare Tunnel:
+        icon: cloudflare.png
+        description: Secure Tunnel
+        namespace: network
+        app: cloudflare-tunnel
+    - Cloudflare DNS:
+        icon: cloudflare.png
+        description: External DNS
+        namespace: network
+        app: external-dns-cloudflare
+
+- Infrastructure:
+    - Cilium:
+        icon: cilium.png
+        description: CNI & Network Policy
+        namespace: kube-system
+        app: cilium
+    - CoreDNS:
+        icon: coredns.png
+        description: Cluster DNS
+        namespace: kube-system
+        app: coredns
+    - Metrics Server:
+        icon: kubernetes.png
+        description: Resource Metrics API
+        namespace: kube-system
+        app: metrics-server
+    - Spegel:
+        icon: mdi-content-copy
+        description: Container Registry Mirror
+        namespace: kube-system
+        app: spegel
+    - Reloader:
+        icon: mdi-reload
+        description: ConfigMap/Secret Reload
+        namespace: kube-system
+        app: reloader
+
+- GitOps:
+    - Flux Operator:
+        icon: flux-cd.png
+        description: GitOps Operator
+        namespace: flux-system
+        app: flux-operator
+    - Flux Instance:
+        icon: flux-cd.png
+        description: Cluster Reconciliation
+        namespace: flux-system
+        app: flux
+
+- Security:
+    - Cert Manager:
+        icon: cert-manager.png
+        description: Certificate Management
+        namespace: cert-manager
+        app: cert-manager
