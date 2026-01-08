@@ -1,6 +1,16 @@
 ---
 # For configuration options and examples, please see:
-# https://gethomepage.dev/latest/configs/services
+# https://gethomepage.dev/configs/services/
+#
+# Auto-discovery: Services can also be auto-discovered via HTTPRoute/Ingress annotations.
+# Add these annotations to your HTTPRoute/Ingress resources:
+#   gethomepage.dev/enabled: "true"
+#   gethomepage.dev/name: "Service Name"
+#   gethomepage.dev/description: "Service description"
+#   gethomepage.dev/group: "Group Name"
+#   gethomepage.dev/icon: "icon.png"
+#   gethomepage.dev/href: "https://service.example.com"
+#   gethomepage.dev/pod-selector: "app.kubernetes.io/name=myapp"
 
 - Applications:
     - Echo Server:
@@ -9,77 +19,102 @@
         description: HTTP Echo Test Server
         namespace: default
         app: echo
+        ping: https://echo.plygrnd.org/healthz
+        statusStyle: dot
     - Homepage:
         icon: homepage.png
         href: https://homepage.plygrnd.org/
-        description: Dashboard
+        description: Application Dashboard
         namespace: default
         app: homepage
+        ping: https://homepage.plygrnd.org/api/healthcheck
+        statusStyle: dot
 
 - Networking:
     - Envoy Gateway:
         icon: envoyproxy.png
+        href: https://gateway.envoyproxy.io/
         description: Gateway API Controller
-        namespace: network
+        namespace: envoy-gateway-system
         app: envoy-gateway
+        statusStyle: dot
     - K8s Gateway:
         icon: mdi-dns
         description: Internal DNS Gateway
         namespace: network
         app: k8s-gateway
+        statusStyle: dot
     - Cloudflare Tunnel:
         icon: cloudflare.png
-        description: Secure Tunnel
+        href: https://dash.cloudflare.com/
+        description: Secure Tunnel to Cloudflare
         namespace: network
         app: cloudflare-tunnel
-    - Cloudflare DNS:
+        statusStyle: dot
+    - External DNS:
         icon: cloudflare.png
-        description: External DNS
+        description: Cloudflare DNS Management
         namespace: network
         app: external-dns-cloudflare
+        statusStyle: dot
 
 - Infrastructure:
     - Cilium:
         icon: cilium.png
-        description: CNI & Network Policy
+        href: https://docs.cilium.io/
+        description: eBPF CNI & Network Policy
         namespace: kube-system
         app: cilium
+        podSelector: app.kubernetes.io/name=cilium-agent
+        statusStyle: dot
     - CoreDNS:
         icon: coredns.png
-        description: Cluster DNS
+        description: Cluster DNS Server
         namespace: kube-system
         app: coredns
+        statusStyle: dot
     - Metrics Server:
         icon: kubernetes.png
         description: Resource Metrics API
         namespace: kube-system
         app: metrics-server
+        statusStyle: dot
     - Spegel:
         icon: mdi-content-copy
-        description: Container Registry Mirror
+        href: https://github.com/spegel-org/spegel
+        description: P2P Container Registry Mirror
         namespace: kube-system
         app: spegel
+        statusStyle: dot
     - Reloader:
         icon: mdi-reload
-        description: ConfigMap/Secret Reload
+        href: https://github.com/stakater/Reloader
+        description: ConfigMap/Secret Reload Controller
         namespace: kube-system
         app: reloader
+        statusStyle: dot
 
 - GitOps:
     - Flux Operator:
         icon: flux-cd.png
-        description: GitOps Operator
+        href: https://fluxcd.io/flux/
+        description: GitOps Toolkit Operator
         namespace: flux-system
         app: flux-operator
+        statusStyle: dot
     - Flux Instance:
         icon: flux-cd.png
-        description: Cluster Reconciliation
+        href: https://flux-webhook.plygrnd.org/
+        description: Cluster Reconciliation Engine
         namespace: flux-system
-        app: flux
+        podSelector: app.kubernetes.io/component in (source-controller, kustomize-controller, helm-controller, notification-controller)
+        statusStyle: dot
 
 - Security:
     - Cert Manager:
         icon: cert-manager.png
-        description: Certificate Management
+        href: https://cert-manager.io/docs/
+        description: X.509 Certificate Management
         namespace: cert-manager
         app: cert-manager
+        statusStyle: dot

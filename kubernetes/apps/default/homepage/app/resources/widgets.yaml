@@ -1,7 +1,13 @@
 ---
 # For configuration options and examples, please see:
-# https://gethomepage.dev/latest/configs/service-widgets
+# https://gethomepage.dev/configs/widgets/
 
+# Greeting widget with dynamic time-based messages
+- greeting:
+    text_size: 2xl
+    text: "Welcome to plygrnd"
+
+# Kubernetes cluster overview widget
 - kubernetes:
     cluster:
       show: true
@@ -15,12 +21,37 @@
       memory: true
       showLabel: true
 
+# Local resources widget (container/host stats)
+- resources:
+    label: "System"
+    cpu: true
+    memory: true
+    cputemp: true
+    uptime: true
+    disk:
+      - /app
+    expanded: true
+
+# Search widget
 - search:
     provider: google
     target: _blank
+    focus: false
+    showSearchSuggestions: true
 
+# Date/time widget
 - datetime:
     text_size: xl
     format:
       dateStyle: long
       timeStyle: short
+      hour12: true
+
+# OpenMeteo weather widget (no API key required)
+- openmeteo:
+    label: "Weather"
+    latitude: 41.8781
+    longitude: -87.6298
+    timezone: America/Chicago
+    units: imperial
+    cache: 5

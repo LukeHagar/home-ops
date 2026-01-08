@@ -1,4 +1,11 @@
 ---
+# Kubernetes integration configuration
+# https://gethomepage.dev/configs/kubernetes/
+
+# Use cluster mode for in-cluster service account authentication
 mode: cluster
-ingress: true
-gateway: true
+
+# Enable service discovery from various sources
+ingress: true    # Discover services from Ingress resources
+gateway: true    # Discover services from Gateway API HTTPRoutes
+traefik: false   # Disable Traefik IngressRoute discovery (not using Traefik)
