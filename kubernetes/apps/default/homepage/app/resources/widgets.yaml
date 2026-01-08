@@ -10,9 +10,17 @@
       showLabel: true
       label: "Olympus"
     nodes:
-      # Shows node-specific statistics
-      show: false
+      show: true
+      cpu: true
+      memory: true
+      showLabel: true
 
 - search:
     provider: google
     target: _blank
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short
