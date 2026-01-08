@@ -1,85 +1,123 @@
 ---
 # For configuration options and examples, please see:
-# https://gethomepage.dev/latest/configs/bookmarks
+# https://gethomepage.dev/configs/bookmarks/
 
 - Kubernetes:
     - Kubernetes Docs:
         - abbr: K8s
           icon: kubernetes.png
           href: https://kubernetes.io/docs/
+          description: Official Kubernetes documentation
     - Flux CD:
         - abbr: Flux
           icon: flux-cd.png
           href: https://fluxcd.io/flux/
+          description: GitOps toolkit documentation
     - Helm Charts:
         - abbr: Helm
           icon: helm.png
           href: https://artifacthub.io/
+          description: Find Helm charts
     - Talos Linux:
         - abbr: Talos
           icon: talos.png
           href: https://www.talos.dev/
+          description: Kubernetes OS documentation
+    - Gateway API:
+        - abbr: GWAPI
+          icon: kubernetes.png
+          href: https://gateway-api.sigs.k8s.io/
+          description: Kubernetes Gateway API docs
 
 - Infrastructure:
     - Cilium:
         - abbr: CNI
           icon: cilium.png
           href: https://docs.cilium.io/
+          description: eBPF networking docs
     - Envoy Gateway:
         - abbr: Envoy
           icon: envoyproxy.png
           href: https://gateway.envoyproxy.io/
+          description: Gateway controller docs
     - Cert Manager:
         - abbr: Certs
           icon: cert-manager.png
           href: https://cert-manager.io/docs/
+          description: Certificate management
     - Cloudflare:
         - abbr: CF
           icon: cloudflare.png
           href: https://dash.cloudflare.com/
+          description: Cloudflare dashboard
+    - External DNS:
+        - abbr: EDNS
+          icon: cloudflare.png
+          href: https://kubernetes-sigs.github.io/external-dns/
+          description: External DNS documentation
 
 - Development:
     - GitHub:
         - abbr: GH
           icon: github.png
           href: https://github.com/
+          description: Code repository
     - VS Code:
         - abbr: VSC
           icon: vscode.png
           href: https://vscode.dev/
+          description: Online VS Code
     - Docker Hub:
         - abbr: Docker
           icon: docker.png
           href: https://hub.docker.com/
+          description: Container registry
     - GHCR:
         - abbr: GHCR
           icon: github.png
           href: https://ghcr.io/
+          description: GitHub Container Registry
 
 - Monitoring:
     - Grafana Dashboards:
         - abbr: Dash
           icon: grafana.png
           href: https://grafana.com/grafana/dashboards/
+          description: Community dashboards
     - Prometheus:
         - abbr: Prom
           icon: prometheus.png
           href: https://prometheus.io/docs/
+          description: Metrics documentation
     - Homepage Docs:
         - abbr: Home
           icon: homepage.png
           href: https://gethomepage.dev/
+          description: Homepage documentation
+    - bjw-s Charts:
+        - abbr: BJW
+          icon: helm.png
+          href: https://bjw-s.github.io/helm-charts/
+          description: App-template Helm charts
 
 - Community:
     - Reddit r/homelab:
         - abbr: HL
           icon: reddit.png
           href: https://reddit.com/r/homelab
+          description: Homelab community
     - Reddit r/kubernetes:
         - abbr: K8s
           icon: reddit.png
           href: https://reddit.com/r/kubernetes
+          description: Kubernetes community
     - Reddit r/selfhosted:
         - abbr: SH
           icon: reddit.png
           href: https://reddit.com/r/selfhosted
+          description: Self-hosted community
+    - Kubernetes Slack:
+        - abbr: Slack
+          icon: slack.png
+          href: https://slack.k8s.io/
+          description: Official Kubernetes Slack

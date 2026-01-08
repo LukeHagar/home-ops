@@ -1,11 +1,32 @@
 ---
 # For configuration options and examples, please see:
-# https://gethomepage.dev/latest/configs/settings
+# https://gethomepage.dev/configs/settings/
 
 title: plygrnd
+description: Kubernetes Homelab Dashboard
 favicon: https://kubernetes.io/images/favicon.png
 headerStyle: clean
 
+# Theme configuration
+theme: dark
+color: slate
+
+# Background styling
+background:
+  image: https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=2560&q=80
+  blur: sm
+  opacity: 20
+
+# Card blur effect
+cardBlur: sm
+
+# Status indicator style (dot, basic, none)
+statusStyle: dot
+
+# Icon style (theme, gradient)
+iconStyle: theme
+
+# Layout configuration
 layout:
   Applications:
     style: row
@@ -13,11 +34,11 @@ layout:
     icon: mdi-application
   Networking:
     style: row
-    columns: 3
+    columns: 4
     icon: mdi-network
   Infrastructure:
     style: row
-    columns: 3
+    columns: 5
     icon: mdi-server
   GitOps:
     style: row
@@ -28,10 +49,13 @@ layout:
     columns: 1
     icon: mdi-shield-lock
 
+# Quick launch settings
 quicklaunch:
   searchDescriptions: true
   hideInternetSearch: false
   showSearchSuggestions: true
   hideVisitURL: false
 
-statusStyle: dot
+# Providers for widget integrations
+providers:
+  openweathermap: openweathermapapikey

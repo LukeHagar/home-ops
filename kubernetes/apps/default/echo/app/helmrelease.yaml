@@ -60,6 +60,13 @@ spec:
           - port: http
     route:
       app:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: "Echo Server"
+          gethomepage.dev/description: "HTTP Echo Test Server"
+          gethomepage.dev/group: "Applications"
+          gethomepage.dev/icon: "mdi-api"
+          gethomepage.dev/pod-selector: "app.kubernetes.io/name=echo"
         hostnames: ["echo.plygrnd.org"]
         parentRefs:
           - name: envoy-external

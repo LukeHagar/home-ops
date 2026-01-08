@@ -33,7 +33,7 @@ spec:
               repository: ghcr.io/gethomepage/homepage
               tag: v1.8.0
             env:
-              HOMEPAGE_ALLOWED_HOSTS: "*"
+              HOMEPAGE_ALLOWED_HOSTS: "homepage.plygrnd.org,homepage.default.svc.cluster.local,homepage-homepage.default.svc.cluster.local:3000,localhost:3000"
               TZ: America/Chicago
             probes:
               liveness:
@@ -46,6 +46,7 @@ spec:
         serviceAccount:
           identifier: homepage
     defaultPodOptions:
+      automountServiceAccountToken: true
       securityContext:
         runAsNonRoot: true
         runAsUser: 1000
@@ -65,6 +66,13 @@ spec:
           - path: /app/config/logs
     route:
       homepage:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: "Homepage"
+          gethomepage.dev/description: "Application Dashboard"
+          gethomepage.dev/group: "Applications"
+          gethomepage.dev/icon: "homepage.png"
+          gethomepage.dev/pod-selector: "app.kubernetes.io/name=homepage"
         hostnames:
           - "homepage.plygrnd.org"
         parentRefs:
@@ -73,8 +81,8 @@ spec:
             sectionName: https
         rules:
           - backendRefs:
-              - port: *port
-                name: homepage
+              - identifier: homepage
+                port: *port
     service:
       homepage:
         controller: homepage
