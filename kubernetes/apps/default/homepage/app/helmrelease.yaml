@@ -33,7 +33,7 @@ spec:
               repository: ghcr.io/gethomepage/homepage
               tag: v1.8.0
             env:
-              HOMEPAGE_ALLOWED_HOSTS: "*"
+              HOMEPAGE_ALLOWED_HOSTS: "homepage.plygrnd.org,homepage.default.svc.cluster.local,homepage-homepage.default.svc.cluster.local:3000,localhost:3000"
               TZ: America/Chicago
             probes:
               liveness:
@@ -74,8 +74,8 @@ spec:
             sectionName: https
         rules:
           - backendRefs:
-              - port: *port
-                name: homepage
+              - identifier: homepage
+                port: *port
     service:
       homepage:
         controller: homepage
