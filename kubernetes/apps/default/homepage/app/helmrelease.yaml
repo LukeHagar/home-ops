@@ -46,6 +46,7 @@ spec:
         serviceAccount:
           identifier: homepage
     defaultPodOptions:
+      automountServiceAccountToken: true
       securityContext:
         runAsNonRoot: true
         runAsUser: 1000
