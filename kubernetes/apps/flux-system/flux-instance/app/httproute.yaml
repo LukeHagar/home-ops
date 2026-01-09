@@ -13,7 +13,7 @@ metadata:
 spec:
   hostnames: ["flux-webhook.plygrnd.org"]
   parentRefs:
-    - name: external
+    - name: envoy-external
       namespace: network
       sectionName: https
   rules:

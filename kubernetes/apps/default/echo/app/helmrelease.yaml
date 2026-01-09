@@ -69,7 +69,7 @@ spec:
           gethomepage.dev/pod-selector: "app.kubernetes.io/name=echo"
         hostnames: ["echo.plygrnd.org"]
         parentRefs:
-          - name: external
+          - name: envoy-external
             namespace: network
             sectionName: https
         rules:
