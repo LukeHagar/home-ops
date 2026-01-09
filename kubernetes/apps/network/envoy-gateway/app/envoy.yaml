@@ -72,6 +72,18 @@ spec:
             name: plygrnd-org-tls
           - kind: Secret
             name: gitwatch-dev-tls
+          - kind: Secret
+            name: lukehagar-com-tls
+          - kind: Secret
+            name: openapi-gg-tls
+          - kind: Secret
+            name: openapi-info-tls
+          - kind: Secret
+            name: parke-dev-tls
+          - kind: Secret
+            name: pypistats-dev-tls
+          - kind: Secret
+            name: batonapp-dev-tls
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
@@ -104,6 +116,18 @@ spec:
             name: plygrnd-org-tls
           - kind: Secret
             name: gitwatch-dev-tls
+          - kind: Secret
+            name: lukehagar-com-tls
+          - kind: Secret
+            name: openapi-gg-tls
+          - kind: Secret
+            name: openapi-info-tls
+          - kind: Secret
+            name: parke-dev-tls
+          - kind: Secret
+            name: pypistats-dev-tls
+          - kind: Secret
+            name: batonapp-dev-tls
 ---
 apiVersion: gateway.envoyproxy.io/v1alpha1
 kind: BackendTrafficPolicy
