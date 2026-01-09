@@ -73,42 +73,42 @@ spec:
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.gitwatch.dev"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.lukehagar.com"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.openapi.gg"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.openapi.info"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.parke.dev"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.pypistats.dev"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - hostname: "*.batonapp.dev"
                 originRequest:
                   http2Origin: true
                   originServerName: external.plygrnd.org
-                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
+                service: https://envoy-envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
               - service: http_status:404
     persistence:
       config-file:
