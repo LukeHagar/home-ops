@@ -76,7 +76,7 @@ spec:
         hostnames:
           - "homepage.plygrnd.org"
         parentRefs:
-          - name: envoy-external
+          - name: external
             namespace: network
             sectionName: https
         rules:
