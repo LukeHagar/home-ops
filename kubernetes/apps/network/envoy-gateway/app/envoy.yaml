@@ -44,7 +44,7 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: envoy-external
+  name: external
   annotations:
     external-dns.alpha.kubernetes.io/target: external.plygrnd.org
 spec:
@@ -76,7 +76,7 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: envoy-internal
+  name: internal
   annotations:
     external-dns.alpha.kubernetes.io/target: internal.plygrnd.org
 spec:
@@ -161,10 +161,10 @@ metadata:
     external-dns.alpha.kubernetes.io/controller: none
 spec:
   parentRefs:
-    - name: envoy-external
+    - name: external
       namespace: network
       sectionName: http
-    - name: envoy-internal
+    - name: internal
       namespace: network
       sectionName: http
   rules:
